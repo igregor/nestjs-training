@@ -49,7 +49,6 @@ describe('OrdersController', () => {
       expect(
         ordersController.postOrder({
           company: 'Test company',
-          created: '1994-11-05T08:15:30-05:00',
           creator: 'uuid-of-user',
           email: 'thi@is.email',
           items: [{ something: 'should be here' }],

@@ -29,11 +29,11 @@ export class OrdersService {
   }
 
   public addOrder(payload: OrderPayloadDto): Order {
-    const { company, created, creator, email, items } = payload;
+    const { company, creator, email, items } = payload;
     return {
       id: 'uuid-of-the-order',
       company,
-      created,
+      created: '1994-11-05T08:15:30-05:00',
       creator,
       email,
       items,

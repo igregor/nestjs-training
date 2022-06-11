@@ -19,10 +19,9 @@ export class OrdersController {
 
   @Post('/')
   postOrder(@Body() orderPayloadDto: OrderPayloadDto): Order {
-    const { company, created, creator, email, items } = orderPayloadDto;
+    const { company, creator, email, items } = orderPayloadDto;
     return this.ordersService.addOrder({
       company,
-      created,
       creator,
       email,
       items,
