@@ -21,7 +21,7 @@ import { OrdersService } from './orders/orders.service';
         migrationsRun: true,
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         migrations: [__dirname + '/migration/*{.ts,.js}'],
-        migrationsTableName: 'migrations_nestjs_deep_dive',
+        migrationsTableName: 'migrations_table',
       }),
     }),
   ],
