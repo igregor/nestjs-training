@@ -2,15 +2,15 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn() // TODO should it be this primary key?
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column('varchar')
   name: string;
 
-  @Column('varchar') // TODO how to store email in the DB
+  @Column('varchar')
   email: string;
 
-  // @Column('varchar') // TODO how to store array in the DB
-  // roles: string[];
+  @Column('varchar') // TODO Ask Stijn: how to store array of enums in the DB actually
+  roles: string[];
 }

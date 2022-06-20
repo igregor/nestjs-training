@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class migration1655037887016 implements MigrationInterface {
+export class migration1655037887016_order_table implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'); // postgress does not have the uuid by default, do it like Stijn says :D
 

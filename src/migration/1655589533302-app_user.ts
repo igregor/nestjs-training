@@ -1,18 +1,17 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class migration1655589533302 implements MigrationInterface {
+export class migration1655589533302_app_user implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'user',
+        name: 'app_user',
         columns: [
           {
             name: 'id',
             type: 'uuid',
             isPrimary: true,
-            // isGenerated: true,
-            // generationStrategy: 'uuid',
-            default: 'uuid_generate_v4()',
+            isGenerated: true,
+            generationStrategy: 'uuid',
           },
           {
             name: 'email',
@@ -26,12 +25,16 @@ export class migration1655589533302 implements MigrationInterface {
             name: 'password',
             type: 'varchar',
           },
+          {
+            name: 'roles',
+            type: 'text[]',
+          },
         ],
       }),
     );
 
     await queryRunner.query(
-      `INSERT INTO user (name, email, password) VALUES ('John Doe', 'my@fake.email', 'mypass')`,
+      `INSERT INTO app_user (name, email, password, roles) VALUES ('John Doe', 'my@fake.email', 'mypass', ARRAY ['admin', 'user'])`,
     );
   }
 
